@@ -36,4 +36,5 @@ public class BooleanQueryTest {
 		LuceneQueryUtil.close();
 
 	}
+
 }

@@ -15,6 +15,7 @@ import org.apache.lucene.store.FSDirectory;
 /**
  * <p>
  * Lucene查询常用操作封装
+ *
  * @author niujinpeng
  * @date 2018年7月8日下午11:41:52
  */
@@ -35,12 +36,13 @@ public class LuceneQueryUtil {
 	 * @throws IOException
 	 */
 	public static void printQueryInfo(Query query, TopDocs topDocs) throws IOException {
-		System.out.println("query语句:" + query.toString());
+		System.out.println("query语句：" + query.toString());
 		for (ScoreDoc sdoc : topDocs.scoreDocs) {
 			Document document = indexSearcher.doc(sdoc.doc);
-			System.out.println("DocId:" + sdoc.doc);
-			System.out.println("id:" + document.get("id"));
-			System.out.println("title:" + document.get("title"));
+			System.out.println("DocId：" + sdoc.doc);
+			System.out.println("id：" + document.get("id"));
+			System.out.println("title：" + document.get("title"));
+			System.out.println("content："+document.get("content"));
 			System.out.println("文档评分：" + sdoc.score);
 		}
 	}

@@ -36,8 +36,6 @@ public class MultiFieldQueryParserTest {
 		MultiFieldQueryParser queryParser = new MultiFieldQueryParser(fields, ikAnalyzer6x);
 		// 要查询的关键词
 		Query query = queryParser.parse("美国");
-
-		System.out.println("query语句:" + query.toString());
 		TopDocs docs = indexSearcher.search(query, 10);
 
 		LuceneQueryUtil.printQueryInfo(query,docs);
