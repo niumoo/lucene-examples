@@ -88,7 +88,6 @@ public class HighlighterTest {
      * @return
      */
     public static String getHighLighter(String content, String keyword, int summarySize) throws IOException, InvalidTokenOffsetsException {
-//        StandardAnalyzer standardAnalyzer = new StandardAnalyzer();
         Analyzer analyzer = new IKAnalyzer6x();
 
         // 查询标题中包含“思维”或者“模型”的数据信息
@@ -101,7 +100,7 @@ public class HighlighterTest {
         BooleanQuery booleanQuery = new BooleanQuery.Builder().add(bClause1).add(bClause2).build();
         QueryScorer queryScorer = new QueryScorer(booleanQuery);
         System.out.println(booleanQuery.toString());
-        
+
         // 设置高亮文本长度
         SimpleFragmenter simpleFragmenter = new SimpleFragmenter(summarySize);
         SimpleHTMLFormatter simpleHTMLFormatter = new SimpleHTMLFormatter("【", "】");
