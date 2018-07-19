@@ -75,22 +75,23 @@ public class GetTopTerms {
 
     /**
      * <p>
-     * Description：获取按字符串长度比较的比较器，结果按字符串长度逆序
+     * Description：获取按Map值比较的比较器，结果按Map的value值逆序
      *
      * @author niujinpeng
      * @date 2018年5月25日下午2:27:33
      */
     public static class ComparatorByValue implements Comparator {
+        // 固定的方法，要比较多少个，就写多少个参数
         @Override
-        public int compare(Object obj1, Object obj2)// 固定的方法，要比较多少个，就写多少个参数
+        public int compare(Object obj1, Object obj2)
         {
             if (!(obj1 instanceof Map.Entry) || !(obj2 instanceof Map.Entry)) {
                 System.err.println(new ClassCastException("ComparatorByValue ClassCastException"));
                 return 1;
             }
-            // 强制转换成字符类型
+            // 强制转换成Entry类型
             Map.Entry<String,Integer> entry1 = (Map.Entry) obj1;
-            // 强制转换成字符类型
+            // 强制转换成Entry类型
             Map.Entry<String,Integer> entry2 = (Map.Entry) obj2;
             // 比较
             int num = entry2.getValue() - entry1.getValue();
