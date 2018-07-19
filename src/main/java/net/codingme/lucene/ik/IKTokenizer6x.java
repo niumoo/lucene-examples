@@ -15,7 +15,7 @@ import org.wltea.analyzer.core.Lexeme;
  * @author niujinpeng
  * @date 2018年6月20日下午11:11:42
  */
-public class IKTokenizer6x extends Tokenizer {
+public final class IKTokenizer6x extends Tokenizer {
 
 	// IK 分词器实现
 	private IKSegmenter _IKImplement;
@@ -39,19 +39,26 @@ public class IKTokenizer6x extends Tokenizer {
 
 	@Override
 	public boolean incrementToken() throws IOException {
-		clearAttributes(); // 清除所有的词元属性
+		// 清除所有的词元属性
+		clearAttributes();
 		Lexeme nextLexeme = _IKImplement.next();
 		if (nextLexeme != null) {
-			// 将Lexeme转化成Attributes
-			termAtt.append(nextLexeme.getLexemeText()); // 设置词元文本
-			termAtt.setLength(nextLexeme.getLength()); // 设置词元长度
-			offsetAttribute.setOffset(nextLexeme.getBeginPosition(), nextLexeme.getEndPosition()); // 设置词元位移
+			// 将Lexeme转成Attributes
+			// 设置词元文本
+			termAtt.append(nextLexeme.getLexemeText());
+			// 设置词元长度
+			termAtt.setLength(nextLexeme.getLength());
+			// 设置词元位移
+			offsetAttribute.setOffset(nextLexeme.getBeginPosition(), nextLexeme.getEndPosition());
 			// 记录分词的最后位置
 			endPosition = nextLexeme.getEndPosition();
-			typeAtt.setType(nextLexeme.getLexemeText()); // 记录词元分类
-			return true; // 返回true告知还有下个词元信息
+			// 记录词元分类
+			typeAtt.setType(nextLexeme.getLexemeTypeString());
+			// 返会true告知还有下个词元
+			return true;
 		}
-		return false; // 返回false告知词元输出完毕
+		// 返会false告知词元输出完毕
+		return false;
 	}
 	
 	@Override
