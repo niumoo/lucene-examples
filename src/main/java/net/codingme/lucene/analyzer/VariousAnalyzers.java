@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.StringReader;
 
 import org.apache.lucene.analysis.Analyzer;
+import org.apache.lucene.analysis.CharArraySet;
 import org.apache.lucene.analysis.TokenStream;
 import org.apache.lucene.analysis.cjk.CJKAnalyzer;
 import org.apache.lucene.analysis.cn.smart.SmartChineseAnalyzer;
@@ -65,7 +66,7 @@ public class VariousAnalyzers {
         System.out.println("关键词分词：" + analyzer.getClass() + "：");
         printAnalyzer(analyzer);
 
-        analyzer = new StopAnalyzer(); // 停用分词
+        analyzer = new StopAnalyzer(CharArraySet.EMPTY_SET); // 停用分词
         System.out.println("停用分词：" + analyzer.getClass() + "：");
         printAnalyzer(analyzer);
 

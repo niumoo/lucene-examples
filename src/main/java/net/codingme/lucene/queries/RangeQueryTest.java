@@ -3,7 +3,6 @@ package net.codingme.lucene.queries;
 import net.codingme.lucene.ik.IKAnalyzer6x;
 import org.apache.lucene.document.IntPoint;
 import org.apache.lucene.search.IndexSearcher;
-import org.apache.lucene.search.LegacyNumericRangeQuery;
 import org.apache.lucene.search.Query;
 import org.apache.lucene.search.TopDocs;
 import org.junit.Test;
@@ -28,15 +27,6 @@ public class RangeQueryTest {
 
         LuceneQueryUtil.printQueryInfo(rangeQuery, topDocs);
         LuceneQueryUtil.close();
-
     }
 
-    /**
-     * 范围查询
-     */
-    @Test
-    public void testRangeQuery(){
-        LegacyNumericRangeQuery<Integer> rangeqQuery =LegacyNumericRangeQuery.newIntRange("number",20, 22, true, true);
-        System.out.println(rangeqQuery.toString());
-    }
 }

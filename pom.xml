@@ -8,6 +8,10 @@
     <artifactId>lucene</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <properties>
+        <lucene-version>8.0.0</lucene-version>
+    </properties>
+
     <repositories>
         <repository>
             <!-- Maven 自带的中央仓库使用的Id为central 如果其他的仓库声明也是用该Id 就会覆盖中央仓库的配置 -->
@@ -47,27 +51,34 @@
         <dependency>
             <groupId>org.apache.lucene</groupId>
             <artifactId>lucene-core</artifactId>
-            <version>6.0.0</version>
+            <version>${lucene-version}</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.apache.lucene/lucene-analyzers-smartcn -->
         <dependency>
             <groupId>org.apache.lucene</groupId>
             <artifactId>lucene-analyzers-smartcn</artifactId>
-            <version>6.0.0</version>
+            <version>${lucene-version}</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.apache.lucene/lucene-queryparser -->
         <dependency>
             <groupId>org.apache.lucene</groupId>
             <artifactId>lucene-queryparser</artifactId>
-            <version>6.0.0</version>
+            <version>${lucene-version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.apache.lucene</groupId>
             <artifactId>lucene-queries</artifactId>
-            <version>6.0.0</version>
+            <version>${lucene-version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.lucene/lucene-highlighter -->
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-highlighter</artifactId>
+            <version>${lucene-version}</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/com.janeluo/ikanalyzer -->
@@ -77,18 +88,13 @@
             <version>2012_u6</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/org.apache.lucene/lucene-highlighter -->
-        <dependency>
-            <groupId>org.apache.lucene</groupId>
-            <artifactId>lucene-highlighter</artifactId>
-            <version>6.0.0</version>
-        </dependency>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.12</version>
             <scope>compile</scope>
         </dependency>
+
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>

@@ -27,6 +27,5 @@ public class WildcardQueryTest {
         LuceneQueryUtil.printQueryInfo(wildcardQuery,topDocs);
         LuceneQueryUtil.close();
 
-
     }
 }

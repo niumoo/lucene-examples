@@ -56,7 +56,5 @@ public class News {
 	public void setReply(int reply) {
 		this.reply = reply;
 	}
-	
-	
 
 }
