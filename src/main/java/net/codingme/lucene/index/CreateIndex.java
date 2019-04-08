@@ -97,11 +97,16 @@ public class CreateIndex {
 
         contentType = new FieldType();
         contentType.setIndexOptions(IndexOptions.DOCS_AND_FREQS_AND_POSITIONS_AND_OFFSETS);
+        // 是否存储字段值
         contentType.setStored(true);
+        // 使用配置的分词器对其进行词条化
         contentType.setTokenized(true);
+        // 是否存储词向量
         contentType.setStoreTermVectors(true);
+        // 是否存储词向量中的偏移信息
         contentType.setStoreTermVectorOffsets(true);
         contentType.setStoreTermVectorPayloads(true);
+        // 是否存储词向量中的位移信息
         contentType.setStoreTermVectorPositions(true);
 
         // 创建Document对象
