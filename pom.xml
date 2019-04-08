@@ -6,7 +6,12 @@
 
     <groupId>net.codingme</groupId>
     <artifactId>lucene</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>lucene-8</module>
+        <module>lucene-core</module>
+    </modules>
 
     <properties>
         <lucene-version>8.0.0</lucene-version>
