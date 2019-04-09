@@ -35,12 +35,9 @@ public class StkAnalyzer {
 
     // Lucene标准分词处理
     public static void stdAnalyzer(String str) throws IOException {
-        Analyzer analyzer = null;
-
-        analyzer = new StandardAnalyzer();
+        Analyzer analyzer = new StandardAnalyzer();
         StringReader reader = new StringReader(str);
         TokenStream tokenStream = analyzer.tokenStream(str, reader);
-
         // 清空流
         tokenStream.reset();
         CharTermAttribute charTermAttribute = tokenStream.getAttribute(CharTermAttribute.class);
@@ -50,5 +47,4 @@ public class StkAnalyzer {
         System.out.println();
         analyzer.close();
     }
-
 }
