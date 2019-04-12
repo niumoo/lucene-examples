@@ -3,6 +3,7 @@ package net.codingme.lucene.analyzer;
 import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.TokenStream;
 import org.apache.lucene.analysis.charfilter.HTMLStripCharFilter;
+import org.apache.lucene.analysis.cjk.CJKWidthFilter;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.analysis.tokenattributes.CharTermAttribute;
 import org.junit.Test;
@@ -26,6 +27,7 @@ public class FilterAnalyzer {
         // 使用 HTML 过滤器
         HTMLStripCharFilter htmlStripCharFilter = new HTMLStripCharFilter(new StringReader(str));
         TokenStream tokenStream = analyzer.tokenStream(str, htmlStripCharFilter);
+        //CJKWidthFilter cjkWidthFilter = new CJKWidthFilter(tokenStream);
         // 清空流
         tokenStream.reset();
         CharTermAttribute charTermAttribute = tokenStream.getAttribute(CharTermAttribute.class);
