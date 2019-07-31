@@ -1,11 +1,10 @@
 package net.codingme.lucene.queries;
 
-import net.codingme.lucene.ik.IKAnalyzer6x;
+import net.codingme.lucene.ik.IkAnalyzer6x;
 import org.apache.lucene.document.IntPoint;
 import org.apache.lucene.search.IndexSearcher;
 import org.apache.lucene.search.Query;
 import org.apache.lucene.search.TopDocs;
-import org.junit.Test;
 
 import java.io.IOException;
 
@@ -20,7 +19,7 @@ public class RangeQueryTest {
 
     public static void main(String[] args) throws IOException {
         IndexSearcher indexSearch = LuceneQueryUtil.getIndexSearch();
-        IKAnalyzer6x ikAnalyzer6x = new IKAnalyzer6x();
+        IkAnalyzer6x ikAnalyzer6x = new IkAnalyzer6x();
 
         Query rangeQuery = IntPoint.newRangeQuery("reply", 500, 1000);
         TopDocs topDocs = indexSearch.search(rangeQuery, 10);

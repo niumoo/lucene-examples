@@ -6,7 +6,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Date;
 
-import net.codingme.lucene.ik.IKAnalyzer6x;
+import net.codingme.lucene.ik.IkAnalyzer6x;
 import net.codingme.lucene.pojo.News;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.document.Field;
@@ -19,7 +19,6 @@ import org.apache.lucene.index.IndexWriterConfig;
 import org.apache.lucene.index.IndexWriterConfig.OpenMode;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
-import org.apache.lucene.store.NIOFSDirectory;
 
 /**
  * <p>
@@ -59,7 +58,7 @@ public class CreateIndex {
         news3.setReply(1872);
 
         // 创建IK分词器
-        IKAnalyzer6x analyzer6x = new IKAnalyzer6x();
+        IkAnalyzer6x analyzer6x = new IkAnalyzer6x();
         IndexWriterConfig indexWriterConfig = new IndexWriterConfig(analyzer6x);
         // OpenMode.CREATE 则为清空索引重新创建
         indexWriterConfig.setOpenMode(OpenMode.CREATE);

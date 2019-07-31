@@ -3,7 +3,7 @@ package net.codingme.lucene.analyzer;
 import java.io.IOException;
 import java.io.StringReader;
 
-import net.codingme.lucene.ik.IKAnalyzer6x;
+import net.codingme.lucene.ik.IkAnalyzer6x;
 import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.TokenStream;
 import org.apache.lucene.analysis.tokenattributes.CharTermAttribute;
@@ -22,7 +22,7 @@ public class IKExtDicTest {
     private static String string = "厉害了我的国， 是春节推出的充满了正能量的国家大片";
 
     public static void main(String[] args) throws IOException {
-        printlnAnalyzer(new IKAnalyzer6x(true), string);
+        printlnAnalyzer(new IkAnalyzer6x(true), string);
     }
 
     public static void printlnAnalyzer(Analyzer analyzer, String string) throws IOException {

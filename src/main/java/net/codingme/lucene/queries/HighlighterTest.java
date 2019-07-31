@@ -1,6 +1,6 @@
 package net.codingme.lucene.queries;
 
-import net.codingme.lucene.ik.IKAnalyzer6x;
+import net.codingme.lucene.ik.IkAnalyzer6x;
 import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.TokenStream;
 import org.apache.lucene.document.Document;
@@ -31,7 +31,7 @@ public class HighlighterTest {
         // 获取搜索对象
         IndexSearcher indexSearch = LuceneQueryUtil.getIndexSearch();
         // 获取IK分词器
-        IKAnalyzer6x ikAnalyzer6x = new IKAnalyzer6x();
+        IkAnalyzer6x ikAnalyzer6x = new IkAnalyzer6x();
 
         String field = "title";
         QueryParser queryParser = new QueryParser("title", ikAnalyzer6x);
@@ -88,7 +88,7 @@ public class HighlighterTest {
      * @return
      */
     public static String getHighLighter(String content, String keyword, int summarySize) throws IOException, InvalidTokenOffsetsException {
-        Analyzer analyzer = new IKAnalyzer6x();
+        Analyzer analyzer = new IkAnalyzer6x();
 
         // 查询标题中包含“思维”或者“模型”的数据信息
         TermQuery termQuery1 = new TermQuery(new Term("title", "思维"));

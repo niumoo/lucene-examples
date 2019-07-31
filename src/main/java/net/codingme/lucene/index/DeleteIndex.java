@@ -3,7 +3,7 @@ package net.codingme.lucene.index;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-import net.codingme.lucene.ik.IKAnalyzer6x;
+import net.codingme.lucene.ik.IkAnalyzer6x;
 import org.apache.lucene.index.IndexWriter;
 import org.apache.lucene.index.IndexWriterConfig;
 import org.apache.lucene.index.Term;
@@ -24,7 +24,7 @@ public class DeleteIndex {
 	}
 
 	private static void deleteDoc(String field,String key) {
-		IKAnalyzer6x ikAnalyzer6x = new IKAnalyzer6x();
+		IkAnalyzer6x ikAnalyzer6x = new IkAnalyzer6x();
 		IndexWriterConfig indexWriterConfig = new IndexWriterConfig(ikAnalyzer6x);
 		Path indexPath = Paths.get("indexdir");
 		Directory directory ;

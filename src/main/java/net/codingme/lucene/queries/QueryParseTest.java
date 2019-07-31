@@ -1,20 +1,14 @@
 package net.codingme.lucene.queries;
 
 import java.io.IOException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 
-import net.codingme.lucene.ik.IKAnalyzer6x;
-import org.apache.lucene.document.Document;
-import org.apache.lucene.index.DirectoryReader;
+import net.codingme.lucene.ik.IkAnalyzer6x;
 import org.apache.lucene.queryparser.classic.ParseException;
 import org.apache.lucene.queryparser.classic.QueryParser;
 import org.apache.lucene.queryparser.classic.QueryParser.Operator;
 import org.apache.lucene.search.IndexSearcher;
 import org.apache.lucene.search.Query;
-import org.apache.lucene.search.ScoreDoc;
 import org.apache.lucene.search.TopDocs;
-import org.apache.lucene.store.FSDirectory;
 
 /**
  * <p>
@@ -30,7 +24,7 @@ public class QueryParseTest {
 	public static void main(String[] args) throws IOException, ParseException {
 
 		IndexSearcher indexSearcher = LuceneQueryUtil.getIndexSearch();
-		IKAnalyzer6x analyzer6x = new IKAnalyzer6x();
+		IkAnalyzer6x analyzer6x = new IkAnalyzer6x();
 
 		String field = "title";
 		QueryParser queryParser = new QueryParser(field, analyzer6x);

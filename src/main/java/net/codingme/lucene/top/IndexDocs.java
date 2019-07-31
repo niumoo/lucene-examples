@@ -1,13 +1,12 @@
 package net.codingme.lucene.top;
 
-import net.codingme.lucene.ik.IKAnalyzer6x;
+import net.codingme.lucene.ik.IkAnalyzer6x;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.document.Field;
 import org.apache.lucene.document.FieldType;
 import org.apache.lucene.index.IndexOptions;
 import org.apache.lucene.index.IndexWriter;
 import org.apache.lucene.index.IndexWriterConfig;
-import org.apache.lucene.search.IndexSearcher;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
 
@@ -46,7 +45,7 @@ public class IndexDocs {
         File newsFile = new File(filePath);
         String fileContent = fileToString(newsFile);
         // 构造一个分词器，使用IK的智能分词
-        IKAnalyzer6x smIkAnalyzer6x = new IKAnalyzer6x(true);
+        IkAnalyzer6x smIkAnalyzer6x = new IkAnalyzer6x(true);
         IndexWriterConfig indexWriterConfig = new IndexWriterConfig(smIkAnalyzer6x);
         indexWriterConfig.setOpenMode(IndexWriterConfig.OpenMode.CREATE);
 

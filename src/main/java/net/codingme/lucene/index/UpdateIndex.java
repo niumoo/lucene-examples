@@ -12,7 +12,7 @@ import org.apache.lucene.index.Term;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
 
-import net.codingme.lucene.ik.IKAnalyzer6x;
+import net.codingme.lucene.ik.IkAnalyzer6x;
 
 /**
  * <p>
@@ -24,7 +24,7 @@ import net.codingme.lucene.ik.IKAnalyzer6x;
 public class UpdateIndex {
 
 	public static void main(String[] args) {
-		IKAnalyzer6x ikAnalyzer6x = new IKAnalyzer6x();
+		IkAnalyzer6x ikAnalyzer6x = new IkAnalyzer6x();
 		IndexWriterConfig indexWriterConfig = new IndexWriterConfig(ikAnalyzer6x);
 		Path indexPath = Paths.get("indexdir");
 		Directory directory;

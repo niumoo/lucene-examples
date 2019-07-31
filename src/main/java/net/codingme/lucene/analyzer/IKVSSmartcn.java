@@ -3,7 +3,7 @@ package net.codingme.lucene.analyzer;
 import java.io.IOException;
 import java.io.StringReader;
 
-import net.codingme.lucene.ik.IKAnalyzer6x;
+import net.codingme.lucene.ik.IkAnalyzer6x;
 import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.TokenStream;
 import org.apache.lucene.analysis.cn.smart.SmartChineseAnalyzer;
@@ -47,11 +47,11 @@ public class IKVSSmartcn {
         System.out.println("SmartChineseAnalyzer 分词结果：");
         printAnalyzer(analyzer, str1);
 
-        analyzer = new IKAnalyzer6x(true);
+        analyzer = new IkAnalyzer6x(true);
         System.out.println("IKAnalyzer 分词结果：");
         printAnalyzer(analyzer, str1);
 
-        analyzer = new IKAnalyzer6x(false);
+        analyzer = new IkAnalyzer6x(false);
         System.out.println("IKAnalyzer 细粒度分词结果：");
         printAnalyzer(analyzer, str1);
 
@@ -63,7 +63,7 @@ public class IKVSSmartcn {
         System.out.println("SmartChineseAnalyzer 分词结果：");
         printAnalyzer(analyzer, str2);
 
-        analyzer = new IKAnalyzer6x(true);
+        analyzer = new IkAnalyzer6x(true);
         System.out.println("IKAnalyzer 分词结果：");
         printAnalyzer(analyzer, str2);
 
